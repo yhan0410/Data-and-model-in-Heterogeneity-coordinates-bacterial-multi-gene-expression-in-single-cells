@@ -22,6 +22,3 @@ for sampleSizeIndex = 1:numSampleSize
 end
 meanPCC = mean(PCCOverall,2);
 stdPCC =  std(PCCOverall,0,2);
-set_fig(3.5,3.5);
-errorbar(sampleSizeSet,meanPCC, stdPCC);
-set_ax;
