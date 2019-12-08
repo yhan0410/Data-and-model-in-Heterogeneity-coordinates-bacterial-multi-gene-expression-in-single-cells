@@ -1,5 +1,6 @@
 # Data-from-Heterogeneity-coordinates-bacterial-multi-gene-expression-in-single-cells
-
-In each MAT-file, the data is in the cell format named "Fluorescence" containing all mean fluorescence intensity in fo
-For sYH006, sYH014, sYHLib, 
+Each MAT-file contains a set of experimental data. Condition for each experiment (correspond to strains sYH006, sYH014, sYHLib, sYH013) has been described in Table S3.
+Element in the matrix are mean fluorescence intensity in a single cell (i.e. total fluorescence/area).
 Column 1: GFP, Column 2: mCherry
+
+The model is used in "Heterogeneity coordinates bacterial multi-gene expression in single cells". 
