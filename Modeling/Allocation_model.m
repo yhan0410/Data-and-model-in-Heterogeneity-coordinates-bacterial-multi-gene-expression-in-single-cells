@@ -134,8 +134,6 @@ DT_1_mean_range = linspace(0, 200, 101);
 RNAPT_cv2_range = linspace(0, 0.5, 101);
 DT_1_cv2_range = linspace(0, 0.5, 101);
 M_PCC_a = zeros(101,101);
-
-
 % for i = 1:length(DT_1_mean_range)
 %     DT_1 = DT_1_mean_range(i);
 %     RNAPT_var = RNAPT^2 * default_parameters.RNAPT_cv2;
@@ -144,8 +142,6 @@ for i = 1:length(RNAPT_cv2_range)
     for j = 1:length(DT_1_cv2_range)
         DT_1_var = parameters.DT_1^2 * DT_1_cv2_range(j);
         [RNAPF,M_1,M_2,J]  = TX_solver(parameters);
-        %var_a: approximated variance, cor_a: approximated covariance,
-        %PCC_a: approximated Pearson correlation coefficient
         RNAPT_var = parameters.RNAPT^2 * parameters.RNAPT_cv2;
         DT_2_var = parameters.DT_2^2 * parameters.DT_2_cv2;
         Cov_D1_D2 = sqrt(DT_1_var * DT_2_var) * parameters.corr_M1_M2;
@@ -154,6 +150,7 @@ for i = 1:length(RNAPT_cv2_range)
         varianceMatrix = [DT_1_var, Cov_D1_D2, Cov_D1_RNAPT;
                           Cov_D1_D2 ,DT_2_var, Cov_D2_RNAPT;
                           Cov_D1_RNAPT,Cov_D2_RNAPT,RNAPT_var];
+        %M_PCC_a: approximated Pearson correlation coefficient between M1 and M2
         M_PCC_a(i,j) = correlation_approximation_mRNA(varianceMatrix, parameters);
     end
 end
