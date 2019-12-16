@@ -69,7 +69,6 @@ num_MT_1_Range = length(MT_1_Range);
 P_1 = zeros(num_RibT_Range,num_MT_1_Range);
 P_2 = zeros(num_RibT_Range,num_MT_1_Range);
 RibF = zeros(num_RibT_Range,num_MT_1_Range);
-parameters.betap_1 = 1e-7;
 for j = 1:num_RibT_Range
     parameters.RibT = RibT_Range(j);
     for i = 1:num_MT_1_Range
